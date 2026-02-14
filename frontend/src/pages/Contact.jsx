@@ -35,16 +35,13 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try { 
-       const BASE_URL = "https://renviotechnologies.onrender.com";
-       fetch(`${BASE_URL}/api/contact`, {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(formData),
-       });
-      if (!BASE_URL.ok) throw new Error("Submission failed");
+    try {
+      const res = await fetch("https://renviotechnologies.onrender.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Submission failed");
       setIsSubmitted(true);
     } catch (err) {
       alert("Transmission failed. Please check your connection.");
@@ -71,7 +68,6 @@ const Contact = () => {
     { icon: <Linkedin />, href: "https://linkedin.com" },
     { icon: <Twitter />, href: "https://twitter.com" },
   ];
-
 
   return (
     <div className="bg-black text-white min-h-screen selection:bg-[#00ff11] selection:text-black  overflow-x-hidden relative">

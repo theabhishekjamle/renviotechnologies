@@ -43,19 +43,18 @@ export default function Login() {
     
 
     try {
-      const BASE_URL = "https://renviotechnologies.onrender.com";
 
-      fetch(`${BASE_URL}/api/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+       const res = await fetch("https://renviotechnologies.onrender.com/api/auth/login",
+         {
+           method: "POST",
+           headers: { "Content-Type": "application/json" },
+           body: JSON.stringify(formData),
+         },
+       );
+      
+      const data = await res.json();
 
-      const data = await BASE_URL.json();
-
-      if (!BASE_URL.ok) {
+      if (!res.ok) {
         throw new Error(data.message || "Invalid credentials");
       }
 
