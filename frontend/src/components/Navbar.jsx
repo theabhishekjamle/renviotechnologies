@@ -96,9 +96,7 @@ export default function Navbar() {
                 className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px]"
               >
                 <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00ff11_0%,#00ff1100_50%,#00ff11_100%)]" />
-                <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-slate-950 px-6 text-sm font-medium text-white backdrop-blur-3xl">
-                  Get Started
-                </span>
+                
               </motion.button>
             </div>
 
