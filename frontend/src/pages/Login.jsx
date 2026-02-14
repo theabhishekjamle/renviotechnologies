@@ -38,11 +38,19 @@ export default function Login() {
     setLoading(true);
     setError("");
 
+
+
+    
+
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const BASE_URL = "https://renviotechnologies.onrender.com";
+
+      fetch(`${BASE_URL}/api/auth/login`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
 
       const data = await res.json();

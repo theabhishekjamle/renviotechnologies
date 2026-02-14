@@ -35,12 +35,15 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    try { 
+       const BASE_URL = "https://renviotechnologies.onrender.com";
+       fetch(`${BASE_URL}/api/contact`, {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify(formData),
+       });
       if (!res.ok) throw new Error("Submission failed");
       setIsSubmitted(true);
     } catch (err) {

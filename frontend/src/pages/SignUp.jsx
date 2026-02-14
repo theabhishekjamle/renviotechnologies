@@ -39,9 +39,14 @@ export default function SignUp() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+     
+      const BASE_URL = "https://renviotechnologies.onrender.com/";
+
+      fetch(`${BASE_URL}/api/auth/signup`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
 
