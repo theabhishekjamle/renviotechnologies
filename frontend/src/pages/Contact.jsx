@@ -44,7 +44,7 @@ const Contact = () => {
          },
          body: JSON.stringify(formData),
        });
-      if (!res.ok) throw new Error("Submission failed");
+      if (!BASE_URL.ok) throw new Error("Submission failed");
       setIsSubmitted(true);
     } catch (err) {
       alert("Transmission failed. Please check your connection.");

@@ -53,9 +53,9 @@ export default function Login() {
         body: JSON.stringify(data),
       });
 
-      const data = await res.json();
+      const data = await BASE_URL.json();
 
-      if (!res.ok) {
+      if (!BASE_URL.ok) {
         throw new Error(data.message || "Invalid credentials");
       }
 
