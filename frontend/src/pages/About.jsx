@@ -110,7 +110,7 @@ export default function About() {
           <div className="flex items-center gap-6 border-t border-zinc-900 pt-10">
             <div className="w-16 h-16 rounded-full overflow-hidden grayscale">
               <img
-                src={team[0].img}
+                src="../assets/images/founder.jpeg"
                 alt="Founder"
                 className="w-full h-full object-cover"
               />

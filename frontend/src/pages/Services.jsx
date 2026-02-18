@@ -33,12 +33,12 @@ const services = [
   },
   {
     id: "03",
-    title: "DIGITAL STRATEGY",
-    tagline: "GROWTH MODELS",
-    tag: "MARKET STRATEGY",
+    title: "VIDEO PRODUCTION",
+    tagline: "MARKET PENETRATION",
+    tag: "AGGRESSIVE SCALING",
     metric: "4.5X SCALING",
-    desc: "DATA-DRIVEN SCALING MODELS DESIGNED TO PENETRATE MODERN DIGITAL MARKETS AT VELOCITY.",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
+    desc: "AGGRESSIVE VIDEO CONTENT STRATEGIES DESIGNED TO MAXIMIZE ENGAGEMENT AND MARKET PENETRATION.",
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000&auto=format&fit=crop",
     icon: <BarChart3 size={20} />,
   },
   {
@@ -90,7 +90,6 @@ export default function Services() {
   }, []);
 
   return (
-    
     <section className="bg-[#020202] py-40 overflow-hidden relative selection:bg-[#00ff11] selection:text-black">
       {/* Dynamic Cursor Light */}
       <div
@@ -243,7 +242,7 @@ const ServiceSection = ({ service, index }) => {
 
   const yImage = useSpring(
     useTransform(scrollYProgress, [0, 1], [100, -100]),
-    springConfig
+    springConfig,
   );
   const skewImage = useTransform(scrollYProgress, [0, 0.5, 1], [5, 0, -5]);
   const scaleImage = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
@@ -274,13 +273,13 @@ const ServiceSection = ({ service, index }) => {
         >
           <motion.div
             style={{ y: yImage, skewY: skewImage }}
-            className="relative aspect-[4/5] rounded-xl overflow-hidden border border-white/10 group bg-zinc-900 shadow-2xl"
+            className="relative  rounded-xl overflow-hidden border border-white/10 group bg-zinc-900 shadow-2xl"
           >
             <motion.img
-              style={{ scale: 1.2 }}
+              style={{ scale: 1 }}
               src={service.img}
               alt={service.title}
-              className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 ease-out"
+              className="w-full h-full object-cover grayscale brightness-50   group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 ease-out"
             />
             <div className="absolute bottom-6 left-6 right-6 p-6 backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
               <div className="flex justify-between items-center text-white font-black text-xs tracking-widest uppercase">
@@ -313,7 +312,7 @@ const ServiceSection = ({ service, index }) => {
                 initial={{ y: "100%" }}
                 whileInView={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none uppercase italic"
+                className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase italic"
               >
                 {service.title}
               </motion.h3>

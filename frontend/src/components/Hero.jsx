@@ -34,12 +34,12 @@ const services = [
   },
   {
     id: "03",
-    title: "DIGITAL STRATEGY",
-    tagline: "GROWTH MODELS",
-    tag: "MARKET STRATEGY",
+    title: "VIDEO PRODUCTION",
+    tagline: "MARKET PENETRATION",
+    tag: "AGGRESSIVE SCALING",
     metric: "4.5X SCALING",
-    desc: "DATA-DRIVEN SCALING MODELS DESIGNED TO PENETRATE MODERN DIGITAL MARKETS AT VELOCITY.",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
+    desc: "AGGRESSIVE VIDEO CONTENT STRATEGIES DESIGNED TO MAXIMIZE ENGAGEMENT AND MARKET PENETRATION.",
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000&auto=format&fit=crop",
     icon: <BarChart3 size={20} />,
   },
   {
@@ -86,8 +86,8 @@ const steps = [
   },
   {
     id: "03",
-    title: "Deployment",
-    desc: "Aggressive market entry and scaling.",
+    title: "Production",
+    desc: "Aggressive content creation and market penetration.",
   },
 ];
 
@@ -102,7 +102,7 @@ const ServiceSection = ({ service, index }) => {
   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
   const yImage = useSpring(
     useTransform(scrollYProgress, [0, 1], [120, -120]),
-    springConfig
+    springConfig,
   );
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const bgTextY = useTransform(scrollYProgress, [0, 1], [-250, 250]);
@@ -128,7 +128,7 @@ const ServiceSection = ({ service, index }) => {
         >
           <motion.div
             style={{ y: yImage }}
-            className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 group bg-zinc-900"
+            className="relative  rounded-2xl overflow-hidden border border-white/10 group bg-zinc-900"
           >
             <img
               src={service.img}
@@ -155,8 +155,8 @@ const ServiceSection = ({ service, index }) => {
             <motion.h3
               initial={{ y: "100%" }}
               whileInView={{ y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-6xl md:text-8xl font-black text-white tracking-tighter uppercase italic"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase italic"
             >
               {service.title}
             </motion.h3>
@@ -210,7 +210,7 @@ export default function Hero() {
   }, []);
 
   const title1 = "Unrivaled".split("");
-  const title2 = "INTELLIGENCE".split("");
+  const title2 = "Solutions".split("");
 
   const letterVariants = {
     hidden: { y: 100, opacity: 0 },
@@ -400,8 +400,6 @@ export default function Hero() {
           </button>
         </div>
       </section>
-
-      
     </div>
   );
 }
